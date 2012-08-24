@@ -28,6 +28,19 @@ describe 'erlang' do
       :ensure   => 'present',
       :require  => nil,
     )}
+
+    describe 'when parameters are supplied' do
+      let(:params) {{
+        :package_ensure   => 'latest',
+        :package_name     => 'erlang-base',
+        :package_require  => 'Class[Foo]',
+      }}
+      it { should contain_package('erlang').with(
+        :name     => 'erlang-base',
+        :ensure   => 'latest',
+        :require  => 'Class[Foo]'
+      )}
+    end
   end
 
   describe 'when operatingsystem is Debian' do
