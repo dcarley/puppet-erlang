@@ -22,6 +22,7 @@
 #   include ::erlang
 #
 #   class { 'erlang':
+#     package_ensure  => absent,
 #     package_name    => 'erlang-base',
 #     package_require => '',
 #   }
