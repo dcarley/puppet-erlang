@@ -26,7 +26,7 @@ describe 'erlang' do
     it { should contain_package('erlang').with(
       :name     => 'erlang-nox',
       :ensure   => 'present',
-      :require  => nil,
+      :require  => nil
     )}
 
     describe 'when parameters are supplied' do
@@ -52,7 +52,7 @@ describe 'erlang' do
     it { should contain_package('erlang').with(
       :name     => 'erlang-nox',
       :ensure   => 'present',
-      :require  => nil,
+      :require  => nil
     )}
   end
 
