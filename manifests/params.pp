@@ -28,11 +28,11 @@ class erlang::params {
       # Catch Debian Squeeze which doesn't have osfamily from Facter 1.6
       # Added support for Amazon AMIs which have osfamily as 'Linux' and operatingsystem as 'Amazon'
       case $::operatingsystem {
-	'Amazon': {
-	  include ::epel
-	  $package_name	   = 'erlang'
-	  $package_require = Class['epel']	
-	}
+        'Amazon': {
+          include ::epel
+          $package_name     = 'erlang'
+          $package_require  = Class['epel']	
+        }
         'Debian': {
           $package_name     = 'erlang-nox'
           $package_require  = undef
